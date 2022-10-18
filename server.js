@@ -25,6 +25,8 @@ app.use(cookieParser(process.env.JWT_SECRET))
 app.use(express.static('./public'))
 app.use(fileUpload())
 
+console.log("TESTING VARIBLES", process.env)
+
 app.get('/', (req, res, next) => {
   console.log(req.signedCookies)
   res.json({"msg": "connected"})
